@@ -1,0 +1,17 @@
+{
+  "name": "opuk-filemodule",
+  "version": "0.0.1",
+  "author": "opuk",
+  "summary": "A sample module that distributes a file",
+  "license": "Apache 2.0",
+  "source": "https://github.com/opuk/puppet-devel-workshop",
+  "project_page": "https://github.com/opuk/puppet-devel-workshop",
+  "issues_url": "https://github.com/opuk/puppet-devel-workshop/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
