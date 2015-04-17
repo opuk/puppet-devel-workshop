@@ -41,7 +41,7 @@ class filemodule {
     owner => root,
     group => root,
     mode => 0644,
-    content => template("filemodule/the_example_file.erb"),
+    content => template("the_example_file.erb"),
   }
 
 }
