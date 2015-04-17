@@ -1,6 +1,6 @@
-# == Class: filemodule
+# == Class: apache
 #
-# Full description of class filemodule here.
+# Full description of class apache here.
 #
 # === Parameters
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { filemodule:
+#  class { apache:
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #  }
 #
@@ -35,13 +35,27 @@
 #
 # Copyright 2015 Your name here, unless otherwise noted.
 #
-class filemodule {
+class apache (
+  $content = 'Welcome to the site!',
+  $running = 'running' 
+) {
 
-  file { "/tmp/the_file":
-    owner => root,
-    group => root,
-    mode => 0644,
-    content => template("filemodule/the_example_file.erb"),
+  package { 'httpd':
+      ensure => installed,
   }
+
+  file { '/var/www/html/index.html':
+      owner => root,
+      group => root,
+      mode => 0644,
+      content => $content,
+      require => Package['httpd'],
+  }
+
+  service { 'httpd':
+    ensure => $running,
+    require => Package['httpd'],
+  }
+  
 
 }

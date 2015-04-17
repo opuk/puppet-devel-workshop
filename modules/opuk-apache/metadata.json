@@ -1,8 +1,8 @@
 {
-  "name": "opuk-filemodule",
-  "version": "0.0.2",
+  "name": "opuk-apache",
+  "version": "0.0.1",
   "author": "opuk",
-  "summary": "A sample module that distributes a file",
+  "summary": "Install httpd and creates a custom index.html",
   "license": "Apache 2.0",
   "source": "https://github.com/opuk/puppet-devel-workshop",
   "project_page": "https://github.com/opuk/puppet-devel-workshop",
